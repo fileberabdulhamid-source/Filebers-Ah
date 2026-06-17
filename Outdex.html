@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fileber Abdulhamid</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#050816;
+color:white;
+overflow-x:hidden;
+text-align:center;
+}
+
+/* Matrix Background */
+#matrix{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* Navbar */
+nav{
+padding:20px;
+background:rgba(0,0,0,.5);
+backdrop-filter:blur(10px);
+position:fixed;
+width:100%;
+top:0;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:cyan;
+}
+
+/* Hero */
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.profile{
+width:220px;
+height:220px;
+border-radius:50%;
+border:5px solid cyan;
+box-shadow:0 0 20px cyan;
+object-fit:cover;
+}
+
+.hero h1{
+font-size:3rem;
+margin-top:20px;
+color:cyan;
+}
+
+.typing{
+font-size:1.3rem;
+margin-top:15px;
+color:#00ff99;
+}
+
+/* Sections */
+section{
+padding:80px 10%;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+max-width:800px;
+margin:auto;
+line-height:1.8;
+}
+
+h2{
+margin-bottom:20px;
+color:cyan;
+}
+
+/* Skills */
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.skill{
+background:#111827;
+padding:20px;
+border-radius:15px;
+}
+
+.bar{
+height:10px;
+background:#333;
+border-radius:20px;
+margin-top:10px;
+}
+
+.bar span{
+display:block;
+height:100%;
+background:cyan;
+border-radius:20px;
+}
+
+/* Footer */
+footer{
+padding:40px;
+background:#020617;
+}
+
+</style>
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#mission">Mission</a>
+</nav>
+
+<section class="hero">
+
+<img src="myphoto.jpg" class="profile">
+
+<h1>FILEBER ABDULHAMID</h1>
+
+<div class="typing"></div>
+
+<p style="margin-top:20px;color:gold;">
+Dream Big • Work Hard • Trust Allah • Build The Future
+</p>
+
+</section>
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<div class="card">
+
+I am Fileber Abdulhamid, a future Software Engineer from Ethiopia.
+
+I am passionate about technology, software development, artificial intelligence and innovation.
+
+I believe success comes through hard work, discipline, consistency and faith.
+
+My dream is to become a world-class Software Engineer and build solutions that improve people's lives.
+
+Every day I learn new skills and work toward my future goals.
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2>My Skills</h2>
+
+<div class="skills">
+
+<div class="skill">
+HTML
+<div class="bar"><span style="width:95%"></span></div>
+</div>
+
+<div class="skill">
+CSS
+<div class="bar"><span style="width:90%"></span></div>
+</div>
+
+<div class="skill">
+English
+<div class="bar"><span style="width:98%"></span></div>
+</div>
+
+<div class="skill">
+Problem Solving
+<div class="bar"><span style="width:92%"></span></div>
+</div>
+
+</div>
+
+</section>
+
+<section id="mission">
+
+<h2>My Mission</h2>
+
+<div class="card">
+
+My mission is to become a highly skilled Software Engineer and technology innovator.
+
+I want to create applications, websites and AI-powered solutions that help people solve real-world problems.
+
+I am committed to lifelong learning and continuous improvement.
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>FILEBER ABDULHAMID</h2>
+
+<p>Future Software Engineer | Ethiopia</p>
+
+<p>© 2026 All Rights Reserved</p>
+
+</footer>
+
+<script>
+
+/* Typing Effect */
+
+const text =
+"Future Software Engineer | AI Enthusiast | Web Developer | Technology Innovator";
+
+let i = 0;
+
+function typeWriter(){
+
+if(i < text.length){
+
+document.querySelector(".typing").innerHTML += text.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,70);
+
+}
+
+}
+
+typeWriter();
+
+/* Matrix Rain */
+
+const canvas = document.getElementById("matrix");
+
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const letters =
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+const fontSize = 14;
+
+const columns = canvas.width/fontSize;
+
+const drops = [];
+
+for(let x=0;x<columns;x++){
+drops[x]=1;
+}
+
+function draw(){
+
+ctx.fillStyle="rgba(0,0,0,0.05)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="#00ff99";
+ctx.font=fontSize+"px monospace";
+
+for(let i=0;i<drops.length;i++){
+
+const text=
+letters.charAt(
+Math.floor(Math.random()*letters.length)
+);
+
+ctx.fillText(
+text,
+i*fontSize,
+drops[i]*fontSize
+);
+
+if(
+drops[i]*fontSize > canvas.height
+&& Math.random()>0.975
+){
+drops[i]=0;
+}
+
+drops[i]++;
+
+}
+
+}
+
+setInterval(draw,35);
+
+</script>
+
+</body>
+</html>
