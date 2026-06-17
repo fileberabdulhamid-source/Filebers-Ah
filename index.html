@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fileber Abdulhamid | Futuristic Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+/* Animated Background */
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 20%,rgba(0,255,255,.15),transparent 30%),
+radial-gradient(circle at 80% 30%,rgba(255,0,255,.15),transparent 30%),
+radial-gradient(circle at 50% 80%,rgba(0,100,255,.15),transparent 30%);
+animation:bgmove 12s infinite alternate;
+z-index:-2;
+}
+
+@keyframes bgmove{
+from{transform:translateY(0);}
+to{transform:translateY(-60px);}
+}
+
+/* Floating Particles */
+
+.particle{
+position:fixed;
+width:4px;
+height:4px;
+background:white;
+border-radius:50%;
+opacity:.7;
+animation:float 12s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+}
+100%{
+transform:translateY(-100px);
+}
+}
+
+/* Navbar */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,.3);
+backdrop-filter:blur(10px);
+padding:15px;
+z-index:1000;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:cyan;
+}
+
+/* Hero */
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.profile{
+width:260px;
+height:260px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid cyan;
+box-shadow:
+0 0 20px cyan,
+0 0 40px cyan,
+0 0 80px cyan;
+transition:.5s;
+}
+
+.profile:hover{
+transform:scale(1.08) rotateY(15deg);
+}
+
+.hero h1{
+font-size:4rem;
+margin-top:25px;
+background:linear-gradient(90deg,cyan,#00ff88,#ff00ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+font-size:1.4rem;
+margin-top:10px;
+color:#cbd5e1;
+}
+
+.quote{
+margin-top:20px;
+color:gold;
+font-size:1.2rem;
+}
+
+/* Sections */
+
+.section{
+padding:90px 10%;
+}
+
+.title{
+text-align:center;
+font-size:2.7rem;
+margin-bottom:40px;
+color:cyan;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.1);
+padding:35px;
+border-radius:25px;
+line-height:2;
+box-shadow:0 0 25px rgba(0,255,255,.15);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 35px cyan;
+}
+
+/* Skills */
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.skill{
+padding:20px;
+background:#0f172a;
+text-align:center;
+border-radius:15px;
+font-weight:600;
+transition:.4s;
+box-shadow:0 0 15px rgba(0,255,255,.2);
+}
+
+.skill:hover{
+transform:translateY(-10px);
+background:#111c3a;
+box-shadow:0 0 25px cyan;
+}
+
+/* Stats */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:40px;
+}
+
+.stat{
+padding:25px;
+background:rgba(255,255,255,.05);
+border-radius:15px;
+text-align:center;
+}
+
+.stat h3{
+font-size:2rem;
+color:cyan;
+}
+
+/* Footer */
+
+footer{
+padding:40px;
+text-align:center;
+background:#020617;
+margin-top:60px;
+}
+
+footer h3{
+color:cyan;
+margin-bottom:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#mission">Mission</a>
+</nav>
+
+<div class="particle" style="left:10%;animation-delay:0s"></div>
+<div class="particle" style="left:20%;animation-delay:2s"></div>
+<div class="particle" style="left:35%;animation-delay:4s"></div>
+<div class="particle" style="left:50%;animation-delay:1s"></div>
+<div class="particle" style="left:70%;animation-delay:3s"></div>
+<div class="particle" style="left:90%;animation-delay:5s"></div>
+
+<section class="hero">
+
+<img src="myphoto.jpg" class="profile">
+
+<h1>FILEBER ABDULHAMID</h1>
+
+<p class="subtitle">
+Future Software Engineer • Technology Enthusiast • Web Developer • Digital Innovator
+</p>
+
+<p class="quote">
+"Success is built through vision, discipline, faith and relentless effort."
+</p>
+
+</section>
+
+<section class="section" id="about">
+
+<h2 class="title">About Me</h2>
+
+<div class="card">
+
+Hello! My name is <b>Fileber Abdulhamid</b>.
+
+I am a passionate and ambitious technology enthusiast from Chiro, Oromia, Ethiopia.
+
+My dream is to become a world-class Software Engineer, technology innovator and entrepreneur.
+
+I enjoy learning programming, web development, modern technology and digital innovation.
+
+I strongly believe that hard work, discipline, consistency and faith can transform dreams into reality.
+
+I never stop learning and I always challenge myself to become better every day.
+
+My goal is to create powerful software, useful applications and digital solutions that improve people's lives.
+
+I want to contribute to the growth of Ethiopia, Africa and the global technology community through innovation and creativity.
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h3>100%</h3>
+<p>Determination</p>
+</div>
+
+<div class="stat">
+<h3>24/7</h3>
+<p>Learning Mindset</p>
+</div>
+
+<div class="stat">
+<h3>∞</h3>
+<p>Big Dreams</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="skills">
+
+<h2 class="title">Skills & Strengths</h2>
+
+<div class="skills">
+
+<div class="skill">English Communication</div>
+<div class="skill">HTML Development</div>
+<div class="skill">CSS Design</div>
+<div class="skill">JavaScript Basics</div>
+<div class="skill">Problem Solving</div>
+<div class="skill">Technology Learning</div>
+<div class="skill">Creative Thinking</div>
+<div class="skill">Digital Innovation</div>
+<div class="skill">Self Motivation</div>
+<div class="skill">Leadership Potential</div>
+<div class="skill">Future Software Engineering</div>
+<div class="skill">Continuous Improvement</div>
+
+</div>
+
+</section>
+
+<section class="section" id="mission">
+
+<h2 class="title">My Mission</h2>
+
+<div class="card">
+
+My mission is to become a highly skilled Software Engineer and build innovative digital solutions that help people solve real-world problems.
+
+I am committed to lifelong learning, professional excellence and personal growth.
+
+I want to inspire young people to believe in their abilities, pursue their dreams and use technology to create a better future.
+
+The future belongs to those who prepare for it today, and I am preparing every day.
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>FILEBER ABDULHAMID</h3>
+
+<p>Future Software Engineer | Ethiopia</p>
+
+<p>© 2026 All Rights Reserved</p>
+
+</footer>
+
+</body>
+  </html>
